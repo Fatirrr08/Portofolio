@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Fatir Gibran - Mahasiswa Teknik Informatika, Pengembang Web, Jaringan, & Keamanan Siber">
+    <title>Fatir Gibran | Portofolio</title>
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">FATIR<span class="dot">.</span></a>
+        <ul class="nav-links">
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#keterampilan">Keterampilan</a></li>
+            <li><a href="#proyek">Proyek</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero section">
+        <div class="hero-content fade-up">
+            <div class="hero-badge">
+                <i data-lucide="check-circle-2"></i> Available for Work
+            </div>
+            <h1>Halo, Saya <br><span class="highlight">Fatir Gibran</span></h1>
+            <p class="subtitle">Mahasiswa Teknik Informatika | Pengembang Web, Jaringan, & Keamanan Siber</p>
+            <a href="#proyek" class="btn-cta">
+                Lihat Proyek <i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i>
+            </a>
+        </div>
+        <div class="hero-image fade-up">
+            <div class="image-wrapper">
+                <img src="image/fotomuka.jpg" alt="Foto Profil Fatir Gibran" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&q=80'">
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Tentang Saya -->
+    <section id="tentang" class="tentang section">
+        <div class="container fade-up">
+            <h2>Tentang Saya</h2>
+            <div class="tentang-content">
+                <p>Saya adalah mahasiswa semester 4 S1 Teknik Informatika di Telkom University Purwokerto. Saya memiliki minat utama pada Jaringan Komputer, Keamanan Siber (Cyber Security), dan Kecerdasan Buatan (Fuzzy Logic). Pengalaman saya mencakup konfigurasi infrastruktur IT hingga pemrosesan data, serta pengembangan sistem dan website modern.</p>
+                <p>Selain berfokus pada sisi teknis, saya juga memiliki ketertarikan yang kuat pada organisasi dan kepemimpinan. Saya percaya bahwa kolaborasi tim, public speaking, dan manajemen yang baik sama pentingnya dengan keahlian pemrograman dalam menciptakan solusi yang berdampak luas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Keterampilan -->
+    <section id="keterampilan" class="keterampilan section">
+        <div class="container fade-up">
+            <h2>Keterampilan</h2>
+            <div class="grid-4">
+                <div class="card skill-card">
+                    <div class="card-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>Networking & Keamanan</h3>
+                    <p>MikroTik, Cisco, TCP/IP, Cyber Security, Kali Linux</p>
+                </div>
+                <div class="card skill-card">
+                    <div class="card-icon"><i data-lucide="database"></i></div>
+                    <h3>Pemrograman & Data</h3>
+                    <p>Python, Streamlit, Pandas, Fuzzy Logic</p>
+                </div>
+                <div class="card skill-card">
+                    <div class="card-icon"><i data-lucide="layout"></i></div>
+                    <h3>Pengembangan Web</h3>
+                    <p>Backend, Firebase, Midtrans API</p>
+                </div>
+                <div class="card skill-card">
+                    <div class="card-icon"><i data-lucide="users"></i></div>
+                    <h3>Desain & Soft Skills</h3>
+                    <p>Figma, Canva, Leadership, Public Speaking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Proyek (Dark Mode) -->
+    <section id="proyek" class="proyek section dark-mode">
+        <div class="container fade-up">
+            <h2>Proyek</h2>
+            <div class="grid-4">
+                <div class="card project-card">
+                    <h3>Sistem Prediksi Performa E-Sports PUBG</h3>
+                    <p class="tech-stack">Python, Streamlit, Pandas</p>
+                    <p>Membangun sistem inferensi Fuzzy Logic (Mamdani & Sugeno) untuk memprediksi persentase kemenangan pemain PUBG.</p>
+                </div>
+                <div class="card project-card">
+                    <h3>Salin Gaya - Platform E-Commerce</h3>
+                    <p class="tech-stack">Firebase, Midtrans</p>
+                    <p>Platform e-commerce fesyen dengan sistem logistik dinamis dan integrasi pembayaran QRIS secara real-time.</p>
+                </div>
+                <div class="card project-card">
+                    <h3>SmartFin - Web Finansial</h3>
+                    <p class="tech-stack">Backend Logic, Payment API</p>
+                    <p>Aplikasi web untuk mengelola alur data transaksional dan integrasi payment gateway dengan aman dan efisien.</p>
+                </div>
+                <div class="card project-card">
+                    <h3>MUNTANG-SENTINEL</h3>
+                    <p class="tech-stack">Infrastruktur IT, Digitalisasi Tata Kelola</p>
+                    <p>Inisiatif transformasi desa pintar (smart village) dengan fokus pada pemanfaatan digitalisasi tata kelola lokal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Kontak -->
+    <footer id="kontak" class="kontak">
+        <div class="container fade-up">
+            <h2>Mari Berkolaborasi!</h2>
+            <p>Saya selalu terbuka untuk mendiskusikan pekerjaan proyek, peluang kolaborasi, atau sekadar bertukar pikiran mengenai teknologi.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:fatirgibrann@gmail.com" class="btn-contact">
+                    <i data-lucide="mail"></i> Email
+                </a>
+                <a href="http://www.linkedin.com/in/FatirGibran" target="_blank" rel="noopener noreferrer" class="btn-contact outline">
+                    <i data-lucide="linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Fatirrr08" target="_blank" rel="noopener noreferrer" class="btn-contact outline">
+                    <i data-lucide="github"></i> GitHub
+                </a>
+                <a href="https://instagram.com/spicytir" target="_blank" rel="noopener noreferrer" class="btn-contact outline">
+                    <i data-lucide="instagram"></i> Instagram
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Fatir Gibran. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
