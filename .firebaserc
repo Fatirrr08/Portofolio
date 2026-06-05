@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "portofolio-fatir-08"
+  },
+  "targets": {
+    "portofolio-fatir-08": {
+      "hosting": {
+        "main": [
+          "portofolio-fatir"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
