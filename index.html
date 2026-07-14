@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portofolio Fatir Gibran - Mahasiswa Teknik Informatika, Pengembang Web, Jaringan, & Keamanan Siber">
-    <title>Fatir Gibran | Portofolio</title>
-    <!-- Google Fonts: Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Portofolio Fatir Gibran - Mahasiswa Teknik Informatika, Pengembang Web, Jaringan, & Keamanan Siber">
+    <title>Fatir Gibran | Cyber Portfolio</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="Image/favicon.png">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Background Elements -->
+    <div class="cyber-grid"></div>
+    <div class="orb orb-yellow"></div>
+    <div class="orb orb-cyan"></div>
+
+    <!-- Laser Cursor Follower -->
+    <div class="laser-cursor" id="laserCursor"></div>
+    
+    <!-- Confetti Canvas -->
+    <canvas class="confetti-canvas" id="confettiCanvas"></canvas>
+
+    <!-- Blackout Overlay -->
+    <div class="blackout-overlay" id="blackoutOverlay">
+        <div class="blackout-content">
+            <h3>[ SYSTEM BLACKOUT ]</h3>
+            <p>Voice command: "layar hitam" executed successfully.</p>
+            <button class="btn btn-primary" id="restoreBtn" style="margin-top: 1rem;">
+                <i data-lucide="power"></i> Kembalikan Layar
+            </button>
+        </div>
+    </div>
+
+    <!-- Curtain Panels -->
+    <div class="curtain-panel curtain-left" id="curtainLeft">
+        <div class="curtain-logo">FATIR</div>
+    </div>
+    <div class="curtain-panel curtain-right" id="curtainRight">
+        <div class="curtain-logo" style="color: var(--accent-yellow);">.GIBRAN</div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
-        <a href="#" class="logo">FATIR<span class="dot">.</span></a>
-        <ul class="nav-links">
+        <a href="#" class="logo">FATIR<span>.G</span></a>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#simulator">Simulator</a></li>
             <li><a href="#keterampilan">Keterampilan</a></li>
             <li><a href="#proyek">Proyek</a></li>
             <li><a href="#kontak">Kontak</a></li>
         </ul>
-        <div class="hamburger">
+        <div class="hamburger" id="hamburger">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
@@ -34,119 +64,427 @@
 
     <!-- Hero Section -->
     <header id="hero" class="hero section">
-        <div class="hero-content fade-up">
-            <div class="hero-badge">
-                <i data-lucide="check-circle-2"></i> Available for Work
+        <div class="hero-content">
+            <div class="system-status">
+                <div class="status-dot"></div>
+                ● System Ready // dev_portal v2.5
             </div>
-            <h1>Halo, Saya <br><span class="highlight">Fatir Gibran</span></h1>
-            <p class="subtitle">Mahasiswa Teknik Informatika | Pengembang Web, Jaringan, & Keamanan Siber</p>
-            <a href="#proyek" class="btn-cta">
-                Lihat Proyek <i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i>
-            </a>
+            <h1>Halo, Saya <br>Fatir Gibran</h1>
+            <div class="typing-container">
+                &gt; <span id="typingText"></span><span class="cursor">|</span>
+            </div>
+            <p class="hero-desc">
+                Mahasiswa Teknik Informatika di Telkom University Purwokerto yang berfokus pada Integrasi Kecerdasan Buatan, Rekayasa Web, Infrastruktur Jaringan, dan Keamanan Siber.
+            </p>
+            <div class="hero-actions">
+                <a href="#proyek" class="btn btn-primary">
+                    Lihat Proyek <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#simulator" class="btn btn-secondary">
+                    Uji Simulator <i data-lucide="terminal"></i>
+                </a>
+            </div>
         </div>
-        <div class="hero-image fade-up">
-            <div class="image-wrapper">
-                <img src="Image/fotomuka.jpg" alt="Foto Profil Fatir Gibran" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&q=80'">
+        <div class="hero-image">
+            <div class="avatar-wrapper">
+                <div class="ring"></div>
+                <div class="ring ring-outer"></div>
+                <img src="Image/fotomuka.jpg" alt="Foto Profil Fatir Gibran"
+                    onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&q=80'">
             </div>
         </div>
     </header>
 
     <!-- Section Tentang Saya -->
-    <section id="tentang" class="tentang section">
-        <div class="container fade-up">
-            <h2>Tentang Saya</h2>
-            <div class="tentang-content">
-                <p>Saya adalah mahasiswa semester 4 S1 Teknik Informatika di Telkom University Purwokerto. Saya memiliki minat utama pada Jaringan Komputer, Keamanan Siber (Cyber Security), dan Kecerdasan Buatan (Fuzzy Logic). Pengalaman saya mencakup konfigurasi infrastruktur IT hingga pemrosesan data, serta pengembangan sistem dan website modern.</p>
-                <p>Selain berfokus pada sisi teknis, saya juga memiliki ketertarikan yang kuat pada organisasi dan kepemimpinan. Saya percaya bahwa kolaborasi tim, public speaking, dan manajemen yang baik sama pentingnya dengan keahlian pemrograman dalam menciptakan solusi yang berdampak luas.</p>
+    <section id="tentang" class="section reveal">
+        <h2>Tentang Saya</h2>
+        <div class="about-grid">
+            <div class="cyber-card">
+                <ul class="stats-list">
+                    <li class="stats-item">
+                        <span class="stats-label">Nama</span>
+                        <span class="stats-val">Fatir Gibran</span>
+                    </li>
+                    <li class="stats-item">
+                        <span class="stats-label">Peran</span>
+                        <span class="stats-val">Full-Stack Dev & NetSec</span>
+                    </li>
+                    <li class="stats-item">
+                        <span class="stats-label">Studi</span>
+                        <span class="stats-val">S1 Teknik Informatika</span>
+                    </li>
+                    <li class="stats-item">
+                        <span class="stats-label">Kampus</span>
+                        <span class="stats-val">Telkom University Purwokerto</span>
+                    </li>
+                    <li class="stats-item">
+                        <span class="stats-label">Spesialisasi</span>
+                        <span class="stats-val">AI, Networks & CyberSec</span>
+                    </li>
+                    <li class="stats-item">
+                        <span class="stats-label">Lokasi</span>
+                        <span class="stats-val">Banyumas, Indonesia</span>
+                    </li>
+                    <li class="stats-item">
+                        <span class="stats-label">Status</span>
+                        <span class="stats-val" style="color: var(--accent-cyan);">AKTIF (Semester 4)</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="about-text">
+                <p>
+                    Saya adalah mahasiswa semester 4 S1 Teknik Informatika di Telkom University Purwokerto. Memiliki kegemaran mendalam dalam mengonfigurasi arsitektur jaringan siber yang aman serta mengintegrasikan kecerdasan buatan (Computer Vision & LLMs) ke dalam platform komersial modern.
+                </p>
+                <p>
+                    Sebagai pengembang, saya terbiasa membangun sistem dari perancangan diagram arsitektur hingga rilis produksi. Saya menggabungkan sisi teknis penulisan kode berkecepatan tinggi dengan kepemimpinan tim yang terukur, public speaking, dan manajemen proyek berbasis metodologi Agile.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Simulator: El Presentasi -->
+    <section id="simulator" class="section reveal">
+        <h2>El Presentasi Simulator</h2>
+        <p style="margin-bottom: 2rem; max-width: 700px; line-height: 1.8;">
+            Simulasikan asisten presentasi nirkabel berbasis <strong>Computer Vision (YOLOv8 & MediaPipe)</strong> dan <strong>Speech Recognition</strong> yang saya buat. Coba lakukan gestur seret mouse pada Gesture Pad atau jalankan perintah suara virtual di bawah ini!
+        </p>
+
+        <div class="simulator-container">
+            <div class="sim-header">
+                <div class="sim-title">
+                    <i data-lucide="cpu" style="color: var(--accent-cyan);"></i> EL_GESTUR_ENGINE_V2.5
+                </div>
+                <div class="sim-controls-indicators">
+                    <div class="sim-indicator">
+                        <div class="pulse-yellow"></div> Standby (OK Pose)
+                    </div>
+                    <div style="display:flex; gap:6px; margin-left: 10px;">
+                        <div class="sim-dot-c dot-red"></div>
+                        <div class="sim-dot-c dot-yellow"></div>
+                        <div class="sim-dot-c dot-green"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sim-grid">
+                <!-- Terminal Output -->
+                <div class="sim-terminal" id="terminalLog">
+                    <div class="terminal-line">[SYSTEM] Initializing GPU Pipeline (MPS Support)...</div>
+                    <div class="terminal-line">[SYSTEM] Loading YOLOv8 weight <span class="terminal-yellow">"yolov8n.pt"</span>... OK</div>
+                    <div class="terminal-line">[SYSTEM] DeepSORT Tracker initialized.</div>
+                    <div class="terminal-line">[SYSTEM] MediaPipe Landmark Classifier (21 Joints) loaded.</div>
+                    <div class="terminal-line">[SYSTEM] Microphones mapped. Target: default backend input.</div>
+                    <div class="terminal-line terminal-accent">[SYSTEM] CORE READY. Awaiting simulation inputs.</div>
+                </div>
+
+                <!-- Gesture Pad (Canvas) -->
+                <div class="sim-gesture-pad">
+                    <canvas class="pad-canvas" id="gesturePadCanvas"></canvas>
+                    <div class="pad-instructions" id="padInstructions">
+                        <i data-lucide="hand" style="width: 32px; height: 32px;"></i>
+                        <span><strong>Gesture Trackpad</strong><br>Seret mouse ke kiri/kanan untuk geser proyek, atau gerakkan kursor untuk laser trail.</span>
+                    </div>
+                    <div class="pad-footer-text">// One Euro Filter Active (Smoothing jitter)</div>
+                </div>
+            </div>
+
+            <!-- Command Deck -->
+            <div class="sim-deck">
+                <div class="deck-title">Simulasi Perintah Suara Virtual (Voice HUD)</div>
+                <div class="deck-buttons">
+                    <button class="btn-command" data-cmd="pena">
+                        <span>aktifkan pena</span> <i data-lucide="edit-3"></i>
+                    </button>
+                    <button class="btn-command" data-cmd="konfeti">
+                        <span>tampilkan konfeti</span> <i data-lucide="sparkles"></i>
+                    </button>
+                    <button class="btn-command" data-cmd="hitam">
+                        <span>layar hitam</span> <i data-lucide="eye-off"></i>
+                    </button>
+                    <button class="btn-command" data-cmd="tirai">
+                        <span>buka tirai</span> <i data-lucide="columns"></i>
+                    </button>
+                    <button class="btn-command" data-cmd="zoom">
+                        <span>zoom fit</span> <i data-lucide="zoom-in"></i>
+                    </button>
+                    <button class="btn-command" data-cmd="normal">
+                        <span>kembali normal</span> <i data-lucide="refresh-cw"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Section Keterampilan -->
-    <section id="keterampilan" class="keterampilan section">
-        <div class="container fade-up">
-            <h2>Keterampilan</h2>
-            <div class="grid-4">
-                <div class="card skill-card">
-                    <div class="card-icon"><i data-lucide="shield-check"></i></div>
-                    <h3>Networking & Keamanan</h3>
-                    <p>MikroTik, Cisco, TCP/IP, Cyber Security, Kali Linux</p>
+    <section id="keterampilan" class="section reveal">
+        <h2>Keterampilan</h2>
+        <div class="skills-grid">
+            <!-- AI & Computer Vision -->
+            <div class="skill-category">
+                <h3><i data-lucide="brain"></i> AI & Computer Vision</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info"><span>YOLOv8 & Object Tracking (DeepSORT)</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>MediaPipe Hands & Pose Classification</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>OpenCV & Frame Processing</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Fuzzy Logic System Inference</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                    </div>
                 </div>
-                <div class="card skill-card">
-                    <div class="card-icon"><i data-lucide="database"></i></div>
-                    <h3>Pemrograman & Data</h3>
-                    <p>Python, Streamlit, Pandas, Fuzzy Logic</p>
+            </div>
+
+            <!-- Web Engineering -->
+            <div class="skill-category">
+                <h3><i data-lucide="globe"></i> Web Engineering</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info"><span>React & Vite (JS / TS)</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Backend (FastAPI, Flask, Java Servlets)</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Database (MySQL, Firebase Firestore/RTDB)</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Tailwind CSS & UI Library Integration</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                    </div>
                 </div>
-                <div class="card skill-card">
-                    <div class="card-icon"><i data-lucide="layout"></i></div>
-                    <h3>Pengembangan Web</h3>
-                    <p>Backend, Firebase, Midtrans API</p>
+            </div>
+
+            <!-- Jaringan & Keamanan -->
+            <div class="skill-category">
+                <h3><i data-lucide="shield"></i> Networks & CyberSec</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Infrastruktur Jaringan (MikroTik, Cisco)</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Cyber Security & Penetration Testing</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Analisis Protokol Jaringan (Wireshark)</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Linux Server System Administration</span><span>75%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+                    </div>
                 </div>
-                <div class="card skill-card">
-                    <div class="card-icon"><i data-lucide="users"></i></div>
-                    <h3>Desain & Soft Skills</h3>
-                    <p>Figma, Canva, Leadership, Public Speaking</p>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="skill-category">
+                <h3><i data-lucide="users"></i> Soft Skills</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Manajemen Tim & Metodologi Agile</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Public Speaking & Presentasi Teknis</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Pemecahan Masalah Komprehensif</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Kolaborasi Lintas Organisasi</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Proyek (Dark Mode) -->
-    <section id="proyek" class="proyek section dark-mode">
-        <div class="container fade-up">
-            <h2>Proyek</h2>
-            <div class="grid-4">
-                <div class="card project-card">
-                    <h3>Sistem Prediksi Performa E-Sports PUBG</h3>
-                    <p class="tech-stack">Python, Streamlit, Pandas</p>
-                    <p>Membangun sistem inferensi Fuzzy Logic (Mamdani & Sugeno) untuk memprediksi persentase kemenangan pemain PUBG.</p>
+    <!-- Section Proyek -->
+    <section id="proyek" class="section reveal">
+        <div class="projects-header">
+            <h2>Proyek Utama</h2>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Project 1: El Presentasi -->
+            <div class="project-card" data-index="0">
+                <div>
+                    <div class="project-meta">
+                        <span class="project-role">Lead Developer</span>
+                        <div style="color: var(--accent-yellow);"><i data-lucide="star" style="width:16px; height:16px;"></i></div>
+                    </div>
+                    <h3>El Presentasi (el_gestur_v2)</h3>
+                    <p class="project-desc">
+                        Asisten presentasi bebas genggam berbasis computer vision (YOLOv8 & DeepSORT) untuk melacak pembawa acara utama di setup zone, menerjemahkan 9 gestur MediaPipe Hands, serta voice commands pemformatan otomatis secara real-time.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Flask</span>
+                        <span class="tech-badge">YOLOv8</span>
+                        <span class="tech-badge">MediaPipe</span>
+                        <span class="tech-badge">AppleScript</span>
+                    </div>
                 </div>
-                <div class="card project-card">
-                    <h3>Salin Gaya - Platform E-Commerce</h3>
-                    <p class="tech-stack">Firebase, Midtrans</p>
-                    <p>Platform e-commerce fesyen dengan sistem logistik dinamis dan integrasi pembayaran QRIS secara real-time.</p>
+                <div class="project-links">
+                    <a href="file:///Users/fatirgibran/Kuliah/el_gestur_v2" class="project-link">
+                        <i data-lucide="folder"></i> Direktori Kode
+                    </a>
                 </div>
-                <div class="card project-card">
-                    <h3>SmartFin - Web Finansial</h3>
-                    <p class="tech-stack">Backend Logic, Payment API</p>
-                    <p>Aplikasi web untuk mengelola alur data transaksional dan integrasi payment gateway dengan aman dan efisien.</p>
+            </div>
+
+            <!-- Project 2: Perintis -->
+            <div class="project-card" data-index="1">
+                <div>
+                    <div class="project-meta">
+                        <span class="project-role">Full Stack Developer</span>
+                    </div>
+                    <h3>Perintis - AI Business Validator</h3>
+                    <p class="project-desc">
+                        Platform siber kelayakan ide bisnis & analisis kalkulator finansial bagi UMKM Indonesia. Memperbaiki visual tema, menambahkan simulator angsuran KUR, kalender musiman harga BI, peta interaktif kelayakan lokasi (Leaflet), dan model Gemini AI.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">React 19</span>
+                        <span class="tech-badge">Vite 8</span>
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">Gemini AI</span>
+                        <span class="tech-badge">Tailwind 4</span>
+                    </div>
                 </div>
-                <div class="card project-card">
-                    <h3>MUNTANG-SENTINEL</h3>
-                    <p class="tech-stack">Infrastruktur IT, Digitalisasi Tata Kelola</p>
-                    <p>Inisiatif transformasi desa pintar (smart village) dengan fokus pada pemanfaatan digitalisasi tata kelola lokal.</p>
+                <div class="project-links">
+                    <a href="file:///Users/fatirgibran/Kuliah/Perintis" class="project-link">
+                        <i data-lucide="folder"></i> Direktori Kode
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3: Salin Gaya -->
+            <div class="project-card" data-index="2">
+                <div>
+                    <div class="project-meta">
+                        <span class="project-role">Lead Developer</span>
+                    </div>
+                    <h3>Salin Gaya - Premium Thrifting</h3>
+                    <p class="project-desc">
+                        Platform e-commerce thrifting terkurasi otomatis menggunakan Gemini 2.5 Flash untuk Quality Control gambar. Dilengkapi login Two-Factor Authentication WhatsApp Gateway (Fonnte API), chat C2C, dan Midtrans snap payments.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">React 18</span>
+                        <span class="tech-badge">Firebase RTDB</span>
+                        <span class="tech-badge">Gemini Flash</span>
+                        <span class="tech-badge">WhatsApp API</span>
+                        <span class="tech-badge">Midtrans</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="file:///Users/fatirgibran/Kuliah/salin-gaya-e-commerce" class="project-link">
+                        <i data-lucide="folder"></i> Direktori Kode
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4: LibraryPro -->
+            <div class="project-card" data-index="3">
+                <div>
+                    <div class="project-meta">
+                        <span class="project-role">Backend & Architecture</span>
+                    </div>
+                    <h3>LibraryPro - Management System</h3>
+                    <p class="project-desc">
+                        Sistem Informasi Manajemen Perpustakaan berbasis arsitektur MVC Java Web. Menerapkan modularitas OOP (Polimorfisme login, custom exceptions), database relasional MySQL, pencarian katalog fuzzy Levenshtein, dan dockerization.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Java 17</span>
+                        <span class="tech-badge">Jakarta Servlet</span>
+                        <span class="tech-badge">JSP 3.1</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">Docker</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://librarypro.up.railway.app" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <i data-lucide="external-link"></i> Live Demo
+                    </a>
+                    <a href="file:///Users/fatirgibran/Kuliah/Library-Pro" class="project-link">
+                        <i data-lucide="folder"></i> Direktori
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 5: Smart Student Finance -->
+            <div class="project-card" data-index="4">
+                <div>
+                    <div class="project-meta">
+                        <span class="project-role">Lead Developer</span>
+                    </div>
+                    <h3>Smart Student Finance</h3>
+                    <p class="project-desc">
+                        Aplikasi pencatatan dan pelacakan anggaran keuangan mahasiswa secara dinamis. Mendukung visualisasi chart pemasukan/pengeluaran bulanan, penetapan target tabungan masa depan, serta manajemen multi-akun tervalidasi.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3 Custom</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Java Servlets</span>
+                        <span class="tech-badge">MySQL</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="file:///Users/fatirgibran/Kuliah/WEB%20KEUANGAN" class="project-link">
+                        <i data-lucide="folder"></i> Direktori Kode
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer / Kontak -->
-    <footer id="kontak" class="kontak">
-        <div class="container fade-up">
+    <footer id="kontak" class="footer">
+        <div class="footer-content reveal">
             <h2>Mari Berkolaborasi!</h2>
-            <p>Saya selalu terbuka untuk mendiskusikan pekerjaan proyek, peluang kolaborasi, atau sekadar bertukar pikiran mengenai teknologi.</p>
-            
+            <p class="footer-desc">
+                Saya selalu siap mendiskusikan peluang kolaborasi rekayasa sistem, instalasi infrastruktur IT jaringan, integrasi model AI, atau proyek web modern berskala besar.
+            </p>
+
             <div class="contact-links">
-                <a href="mailto:fatirgibrann@gmail.com" class="btn-contact">
-                    <i data-lucide="mail"></i> Email
+                <a href="mailto:fatirgibrann@gmail.com" class="btn-contact highlight-contact">
+                    <i data-lucide="mail"></i> Email Saya
                 </a>
-                <a href="http://www.linkedin.com/in/FatirGibran" target="_blank" rel="noopener noreferrer" class="btn-contact outline">
+                <a href="http://www.linkedin.com/in/FatirGibran" target="_blank" rel="noopener noreferrer"
+                    class="btn-contact">
                     <i data-lucide="linkedin"></i> LinkedIn
                 </a>
-                <a href="https://github.com/Fatirrr08" target="_blank" rel="noopener noreferrer" class="btn-contact outline">
+                <a href="https://github.com/Fatirrr08" target="_blank" rel="noopener noreferrer"
+                    class="btn-contact">
                     <i data-lucide="github"></i> GitHub
                 </a>
-                <a href="https://instagram.com/spicytir" target="_blank" rel="noopener noreferrer" class="btn-contact outline">
+                <a href="https://instagram.com/spicytir" target="_blank" rel="noopener noreferrer"
+                    class="btn-contact">
                     <i data-lucide="instagram"></i> Instagram
                 </a>
             </div>
-            
+
             <div class="footer-bottom">
-                &copy; <span id="year"></span> Fatir Gibran. All rights reserved.
+                &copy; <span id="year"></span> Fatir Gibran. All rights reserved. // Secured with Antigravity Core
             </div>
         </div>
     </footer>
 
+    <!-- Script Entry -->
     <script src="script.js"></script>
 </body>
+
 </html>
