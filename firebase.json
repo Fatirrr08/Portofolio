@@ -7,6 +7,17 @@
       "**/.*",
       "**/node_modules/**",
       "**/*.RAF"
+    ],
+    "headers": [
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      }
     ]
   }
 }
