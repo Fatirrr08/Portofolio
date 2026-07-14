@@ -43,9 +43,9 @@ export default function Navbar() {
       }`}
     >
       <div className="flex justify-between items-center">
-        <a href="#hero" className="flex items-center gap-2 text-xl font-bold font-space text-pastel-navy group">
+        <a href="#hero" className="flex items-center gap-2 text-xl font-extrabold text-pastel-navy group">
           <Sparkles className="w-5 h-5 text-pastel-blue-dark group-hover:rotate-45 transition-transform" />
-          <span>FATIR<span className="text-pastel-blue-dark">.G</span></span>
+          <span>Fatir Gibran</span>
         </a>
 
         {/* Desktop Links */}

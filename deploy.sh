@@ -15,7 +15,7 @@ git add .
 
 # 3. Commit changes
 echo "💾 Committing changes to Git..."
-git commit -m "feat: refactor portfolio to React + Tailwind with cheerful UI" || echo "⚠️ Nothing to commit or commit failed, proceeding..."
+git commit -m "feat: complete cheerful UI portfolio overhaul with full repo datasets and testing sandbox" || echo "⚠️ Nothing to commit or commit failed, proceeding..."
 
 # 4. Push to remote repository
 echo "📤 Pushing to GitHub remote main branch..."

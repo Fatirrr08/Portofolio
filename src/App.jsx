@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Simulator from './components/Simulator';
+import Sandbox from './components/Sandbox';
 import Keterampilan from './components/Keterampilan';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
@@ -206,7 +206,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Curtain split-panels overlay */}
+      {/* Curtain split-panels overlay (Dot removed completely) */}
       <div
         className={`fixed top-0 left-0 w-1/2 h-screen bg-[#FAF6EE] border-r-4 border-pastel-blue-dark z-[9980] transition-transform duration-700 ease-in-out flex items-center justify-end pr-8 pointer-events-none ${
           isCurtainActive ? 'translate-x-0' : '-translate-x-full'
@@ -219,7 +219,7 @@ export default function App() {
           isCurtainActive ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <span className="text-4xl font-bold font-space text-pastel-blue-dark">.GIBRAN</span>
+        <span className="text-4xl font-bold font-space text-pastel-blue-dark">GIBRAN</span>
       </div>
 
       {/* Floating Sparkles decoration */}
@@ -232,8 +232,8 @@ export default function App() {
       <Hero />
       <About />
       
-      {/* Simulator */}
-      <Simulator
+      {/* Sandbox Component replaces Simulator */}
+      <Sandbox
         activeProjectIndex={activeProjectIndex}
         setActiveProjectIndex={setActiveProjectIndex}
         triggerGlobalEffect={triggerGlobalEffect}
