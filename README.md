@@ -1,18 +1,16 @@
-# 💼 Cyber Tech Portfolio — Fatir Gibran
+# React + Vite
 
-Situs web portofolio pribadi responsif bertema **Cyber-Dark/Cyberpunk** premium yang menampilkan profil, keahlian lengkap, riwayat akademik, dan simulasi asisten presentasi siber.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## ✨ Fitur Unggulan & Animasi Interaktif
-* 🎨 **Cyberpunk Dark Theme** — Desain modern kontras tinggi menggunakan palet gelap slate, kuning emas siber, dan biru elektrik siber.
-* 🖐️ **El Presentasi Simulator (HUD Console)** — Dasbor interaktif terintegrasi yang mensimulasikan kontrol gestur dan pengenalan suara dari proyek `el_gestur_v2`:
-  - **Gesture Trackpad Canvas**: Deteksi klik-seret mouse untuk menggeser proyek dan menggambarkan jejak laser yang mulus (One Euro Filter).
-  - **Virtual Voice HUD**: Simulator tombol perintah suara bahasa Indonesia (`"aktifkan pena"`, `"tampilkan konfeti"`, `"layar hitam"`, `"buka tirai"`, `"zoom fit"`) dengan animasi transisi visual siber yang memukau.
-* 📐 **3D Hover Tilt Card** — Efek kemiringan tiga dimensi interaktif saat kursor melewati kartu proyek dan kartu profil data.
-* ✍️ **Typing Text Header** — Teks dinamis di bagian atas layar yang berputar menampilkan spesialisasi keahlian.
-* ⚡ **iOS-Style Spring Motion** — Transisi antarmuka halus menggunakan parameter fisika pegas `cubic-bezier(0.16, 1, 0.3, 1)`.
+Currently, two official plugins are available:
 
-## 🛠️ Tech Stack
-* **Struktur:** HTML5 (Semantik & Struktur Responsif)
-* **Gaya:** CSS3 (Variables, Grids, Neon Shadows, Keyframe Animations, Glassmorphism)
-* **Logika:** Vanilla JavaScript (ES6 Modules, Canvas API, Keyboard/Touch listeners, Intersection Observer)
-* **Hosting:** Firebase Hosting (site: `portofolio-fatir`, project: `portofolio-fatir-08`)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.

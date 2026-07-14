@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-pastel-bg text-pastel-navy;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-space font-bold;
+  }
+}
+
+@layer utilities {
+  .spring-transition {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .spring-transition-fast {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* Custom bounce keyframes */
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-soft {
+  animation: bounce-soft 3s infinite ease-in-out;
+}
+
+/* Custom terminal scanning lines */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.05) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.02), 
+    rgba(0, 255, 0, 0.01), 
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 4px, 4px 100%;
+}
